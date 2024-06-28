@@ -1,6 +1,6 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 import { fetchState, sendTransition, sendReset } from '../services/api';
-import { STATES, EVENTS } from '../constants';
+import { STATES } from '../constants';
 
 class FSMStore {
   state: string = STATES.STATE_A;
