@@ -4,7 +4,7 @@ import FSM from './fsm';
 import { STATES, EVENTS } from '../../react-app/src/constants';
 
 const app = express();
-app.use(cors());  // Enable CORS
+app.use(cors()); // Enable CORS
 app.use(express.json());
 
 const fsm = new FSM({
@@ -12,10 +12,12 @@ const fsm = new FSM({
   states: {
     [STATES.STATE_A]: { on: { [EVENTS.TO_B]: STATES.STATE_B } },
     [STATES.STATE_B]: { on: { [EVENTS.TO_C]: STATES.STATE_C } },
-    [STATES.STATE_C]: { on: { [EVENTS.BACK_TO_B]: STATES.STATE_B, [EVENTS.TO_D]: STATES.STATE_D } },
+    [STATES.STATE_C]: {
+      on: { [EVENTS.BACK_TO_B]: STATES.STATE_B, [EVENTS.TO_D]: STATES.STATE_D },
+    },
     [STATES.STATE_D]: { on: { [EVENTS.TO_E]: STATES.STATE_E } },
-    [STATES.STATE_E]: { on: {} }  // State E has no further transitions
-  }
+    [STATES.STATE_E]: { on: {} }, // State E has no further transitions
+  },
 });
 
 app.get('/api/state', (req, res) => {

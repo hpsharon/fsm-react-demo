@@ -4,7 +4,7 @@ export const STATES = {
   STATE_B: 'StateB',
   STATE_C: 'StateC',
   STATE_D: 'StateD',
-  STATE_E: 'StateE'
+  STATE_E: 'StateE',
 } as const;
 
 // Define FSM events
@@ -14,5 +14,5 @@ export const EVENTS = {
   BACK_TO_B: 'BACK_TO_B',
   TO_D: 'TO_D',
   TO_E: 'TO_E',
-  RESET: 'RESET'
+  RESET: 'RESET',
 } as const;

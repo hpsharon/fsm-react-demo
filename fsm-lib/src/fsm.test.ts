@@ -14,12 +14,12 @@ describe('FSM State Transitions', () => {
         [STATES.STATE_C]: {
           on: {
             [EVENTS.BACK_TO_B]: STATES.STATE_B,
-            [EVENTS.TO_D]: STATES.STATE_D
-          }
+            [EVENTS.TO_D]: STATES.STATE_D,
+          },
         },
         [STATES.STATE_D]: { on: { [EVENTS.TO_E]: STATES.STATE_E } },
-        [STATES.STATE_E]: { on: {} }  // State E has no further transitions
-      }
+        [STATES.STATE_E]: { on: {} }, // State E has no further transitions
+      },
     });
   });
 
